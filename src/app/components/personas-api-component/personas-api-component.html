@@ -1,0 +1,13 @@
+<h1>Personas API</h1>
+@for (persona of personas; track $index) {
+  <h4 style="color: bisque; background: linear-gradient(to right, #ff7e5f, #feb47b)">
+      {{ persona.Nombre }} 
+  </h4> 
+  <p style="color: black; background: linear-gradient(to right, #ff7e5f, #feb47b)">
+      {{ persona.Email }} 
+  </p> 
+  <p style="color: black; background: linear-gradient(to right, #ff7e5f, #feb47b)">
+      {{ persona.Edad }} 
+  </p> 
+  <hr />
+} <!-- Faltaba cerrar la llave del @for -->

@@ -1,0 +1,12 @@
+<h1>Comics Component</h1> 
+
+@for (comic of arrayComics; track $index) {
+  <h4 style="color: bisque; background: linear-gradient(to right, #ff7e5f, #feb47b)">
+      {{ comic.nombre }} 
+  </h4> 
+  <img src="{{ comic.imagen }}" alt="{{ comic.nombre }}" style="width: 200px; height: auto" /> 
+  <p style="color: black; background: linear-gradient(to right, #ff7e5f, #feb47b)">
+      {{ comic.descripcion }} 
+  </p> 
+  <hr />
+} <!-- Faltaba cerrar la llave del @for -->
