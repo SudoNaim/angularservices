@@ -1,0 +1,9 @@
+<h1>Coches API Component</h1>
+    @for (coche of arrayCoches; track $index) {
+        <a >ID: {{coche.idcoche}}</a>
+        <a >Conductor: {{coche.conductor}}</a>
+        <a >Marca: {{coche.marca}}</a>
+        <a >Modelo: {{coche.modelo}}</a>
+        <img src="{{coche.imagen}}" alt="imagen de {{coche.modelo}}" style="width: 200px; height: 100px;">
+        <hr/>
+    }

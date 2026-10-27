@@ -1,0 +1,37 @@
+<h1>Plantilla Componente</h1>
+<h3>Sleccione una opción:</h3>
+<form #form="ngForm" (ngSubmit)="loadEmpleadosByFuncion()">
+    <select name="funcion" [(ngModel)]="funcionSeleccionada" required>
+    @for (funciones of arrayFunciones; track $index) {
+        <option [value]="funciones">{{ funciones }}</option>
+    }
+</select>
+<button type="submit" [disabled]="form.invalid"> Cargar Empleados</button>
+</form>
+
+<div style="overflow-x: auto; margin: 1.5rem 0; border-radius: 12px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);">
+    <table style="width: 100%; border-collapse: collapse; background: #ffffff; text-align: left;">
+        <thead style="background: #2563eb; color: #ffffff;">
+            <tr>
+                <th scope="col" style="padding: 1rem;">ID empleado</th>
+                <th scope="col" style="padding: 1rem;">Función</th>
+                <th scope="col" style="padding: 1rem;">ID hospital</th>
+                <th scope="col" style="padding: 1rem;">Apellido</th>
+                <th scope="col" style="padding: 1rem;">ID sala</th>
+                <th scope="col" style="padding: 1rem;">Turno</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (empleado of arrayEmpleados; track $index) {
+                <tr style="border-bottom: 1px solid #e5e7eb;">
+                    <td style="padding: 1rem;">{{ empleado.idEmpleado }}</td>
+                    <td style="padding: 1rem;">{{ empleado.funcion }}</td>
+                    <td style="padding: 1rem;">{{ empleado.idHospital }}</td>
+                    <td style="padding: 1rem;">{{ empleado.apellido }}</td>
+                    <td style="padding: 1rem;">{{ empleado.idSala }}</td>
+                    <td style="padding: 1rem;">{{ empleado.turno }}</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
